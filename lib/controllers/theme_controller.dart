@@ -33,7 +33,7 @@ class ThemeController with ChangeNotifier {
   final appThemeData = {
     AppTheme.Dark: ThemeData(
       brightness: Brightness.dark,
-      accentColor: Colors.lightGreen,
+      accentColor: Colors.greenAccent[700],
     ),
     AppTheme.Light: ThemeData(
       brightness: Brightness.light,
