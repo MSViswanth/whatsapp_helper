@@ -60,29 +60,33 @@ class SettingsScreen extends StatelessWidget {
               color: Theme.of(context).accentColor,
             ),
             title: Text('Clear History'),
-            onTap: () {
-              showDialog(
+            onTap: () async {
+              bool clearStatus = await showDialog(
                 context: context,
                 builder: (context) => AlertDialog(
                   title: Text('Are you sure?'),
+                  content:
+                      Text('This will clear all the entries in History Tab.'),
                   actions: [
                     FlatButton(
                         child: Text('Yes'),
                         onPressed: () {
                           Provider.of<HistoryController>(context, listen: false)
                               .clearHistory();
-                          Scaffold.of(context).showSnackBar(SnackBar(
-                            content: Text('History cleared'),
-                          ));
-                          Navigator.of(context).pop();
+                          Navigator.of(context).pop(true);
                         }),
                     FlatButton(
                       child: Text('No'),
-                      onPressed: () => Navigator.of(context).pop(),
+                      onPressed: () => Navigator.of(context).pop(false),
                     ),
                   ],
                 ),
               );
+              if (clearStatus) {
+                Scaffold.of(context).showSnackBar(SnackBar(
+                  content: Text('History Cleared'),
+                ));
+              }
             },
           ),
         ],

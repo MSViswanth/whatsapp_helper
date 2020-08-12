@@ -47,7 +47,7 @@ class HistoryScreen extends StatelessWidget {
                             'Removed +' +
                                 historyProvider.people[index].phoneNumber,
                           ),
-                          behavior: SnackBarBehavior.floating,
+                          // behavior: SnackBarBehavior.floating,
                         ),
                       );
                       historyProvider
@@ -74,27 +74,6 @@ class HistoryScreen extends StatelessWidget {
                       trailing: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: <Widget>[
-                          // IconButton(
-                          //   icon: Icon(
-                          //     Icons.person_add,
-                          //     color: Theme.of(context).accentColor,
-                          //   ),
-                          //   onPressed: () async {
-                          //     if (Platform.isAndroid) {
-                          //       AndroidIntent intent = AndroidIntent(
-                          //         action: 'action_view',
-                          //         data: 'https://api.whatsapp.com/send?phone=' +
-                          //             historyProvider.people[index].phoneNumber,
-                          //         arguments: {'message': 'Hello'},
-                          //       );
-                          //       try {
-                          //         await intent.launch();
-                          //       } catch (e) {
-                          //         print(e);
-                          //       }
-                          //     }
-                          //   },
-                          // ),
                           IconButton(
                             icon: Icon(
                               Icons.sms,
