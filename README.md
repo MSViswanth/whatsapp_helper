@@ -3,7 +3,7 @@
 This app helps you send messages on WhatsApp without saving the contact first.
 
 
-Notice: If there are any errors in country code, create an issue on GitHub.
+_Notice:_ If there are any errors in country code, create an issue on [GitHub](https://github.com/Viswanth1038/whatsapp_helper/).
 
 ## Contribution
 
