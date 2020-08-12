@@ -2,6 +2,9 @@
 
 This app helps you send messages on WhatsApp without saving the contact first.
 
+Download the app from the [releases](https://github.com/Viswanth1038/whatsapp_helper/releases) section.
+
+Or Download version 0.1.0 from [here](https://github.com/Viswanth1038/whatsapp_helper/releases/download/v0.1.0/WhatsApp.Helper-v0.1.0-alpha.apk).
 
 _Notice:_ If there are any errors in country code, create an issue on [GitHub](https://github.com/Viswanth1038/whatsapp_helper/).
 
