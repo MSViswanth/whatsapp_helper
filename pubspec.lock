@@ -217,7 +217,7 @@ packages:
     source: sdk
     version: "0.0.0"
   flutter_downloader:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: flutter_downloader
       url: "https://pub.dartlang.org"
@@ -644,6 +644,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.8"
+  version:
+    dependency: "direct main"
+    description:
+      name: version
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.2.0"
   watcher:
     dependency: transitive
     description:
