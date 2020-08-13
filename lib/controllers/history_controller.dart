@@ -24,7 +24,7 @@ class HistoryController with ChangeNotifier {
   }
 
   addPerson(Person person) {
-    _people.add(person);
+    _people.insert(0, person);
     history.put('history', _people);
     notifyListeners();
   }
