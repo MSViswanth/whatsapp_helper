@@ -1,0 +1,7 @@
+- Update README.md
+- Added padding
+- Updated version number
+- Merge branch 'updater' Added updater
+- Added updater
+- Added version dependency
+- Added flutter_downloader dependency
