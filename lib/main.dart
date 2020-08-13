@@ -17,7 +17,6 @@ void main() async {
   Hive.registerAdapter(PersonAdapter());
   final Box settings = await Hive.openBox('settings');
   final Box history = await Hive.openBox('history');
-
   runApp(MyApp(
     settings: settings,
     history: history,
@@ -40,7 +39,7 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => SettingsController(settings),
-        )
+        ),
       ],
       child: Consumer3<ThemeController, HistoryController, SettingsController>(
         builder: (context, themeController, historyController,
