@@ -319,9 +319,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                     ],
                                   ),
                                 )
-                              : Text(
-                                  'No Updates Available',
-                                  style: TextStyle(fontSize: 25),
+                              : Container(
+                                  height: 200,
+                                  child: Center(
+                                    child: Text(
+                                      'No Updates Available',
+                                      style: TextStyle(fontSize: 25),
+                                    ),
+                                  ),
                                 ),
                     );
                   });
