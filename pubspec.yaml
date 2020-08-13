@@ -44,6 +44,7 @@ dev_dependencies:
   hive_generator:
   json_serializable: ^3.4.0
   flutter_launcher_icons: ^0.7.5
+  flutter_downloader: ^1.5.0
 
 
 dependency_overrides:
