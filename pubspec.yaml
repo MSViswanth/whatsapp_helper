@@ -34,7 +34,12 @@ dependencies:
   json_annotation:
   url_launcher: ^5.5.0
   intl: ^0.16.1
-  
+  version: ^1.2.0
+  http:
+  get_version:
+  dio:
+  permission_handler: ^5.0.1+1
+  open_file: ^3.0.1
 
 dev_dependencies:
   flutter_test:
@@ -44,6 +49,7 @@ dev_dependencies:
   hive_generator:
   json_serializable: ^3.4.0
   flutter_launcher_icons: ^0.7.5
+  
 
 
 dependency_overrides:
