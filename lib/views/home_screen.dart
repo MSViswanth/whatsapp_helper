@@ -42,7 +42,7 @@ class HomeScreen extends StatelessWidget {
                     decoration: BoxDecoration(
                       boxShadow: [
                         BoxShadow(
-                          color: Theme.of(context).accentColor,
+                          color: Colors.black87,
                           offset: Offset(1, 1),
                           blurRadius: 5,
                         ),
@@ -55,10 +55,10 @@ class HomeScreen extends StatelessWidget {
                         color: Theme.of(context).scaffoldBackgroundColor,
                       ),
                       child: InkWell(
-                        onTap: () => Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) => CountriesScreen(),
-                          ),
+                        onTap: () => showDialog(
+                          context: context,
+                          builder: (context) =>
+                              Dialog(child: CountriesScreen()),
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -68,10 +68,11 @@ class HomeScreen extends StatelessWidget {
                               width: 24,
                             ),
                             SizedBox(width: 5),
-                            Text(Provider.of<SettingsController>(context)
-                                .country
-                                .callingCodes
-                                .first),
+                            Text(
+                              Provider.of<SettingsController>(context)
+                                  .country
+                                  .alpha3Code,
+                            ),
                           ],
                         ),
                       ),
@@ -129,7 +130,7 @@ class HomeScreen extends StatelessWidget {
                 padding: EdgeInsets.all(16),
                 width: double.infinity,
                 child: Center(
-                  child: Text('Next'),
+                  child: Text('Send'),
                 ),
               ),
             ),
