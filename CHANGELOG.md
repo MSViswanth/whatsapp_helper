@@ -1,7 +1,5 @@
-- Update README.md
-- Added padding
-- Updated version number
-- Merge branch 'updater' Added updater
-- Added updater
-- Added version dependency
-- Added flutter_downloader dependency
+- Changed changelog to markdown from text
+- Added license to individual files
+- Added licenser configuration
+- Added markdown dependency and bumped version number
+- Added Changelog
