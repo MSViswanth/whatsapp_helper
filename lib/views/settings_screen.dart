@@ -1,9 +1,7 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:open_file/open_file.dart';
 import 'package:provider/provider.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:whatsapp_helper/controllers/history_controller.dart';
 import 'package:whatsapp_helper/controllers/settings_controller.dart';
 import 'package:whatsapp_helper/controllers/theme_controller.dart';
@@ -12,6 +10,7 @@ import 'package:whatsapp_helper/views/countries.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:dio/dio.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 
 class SettingsScreen extends StatefulWidget {
   @override
@@ -78,9 +77,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
     Directory dir = await getExternalStorageDirectory();
     // print(dir2.path);
     path = '${dir.path}/$fileName';
-    String path2 = '/sdcard/download/$fileName';
-    downloadedPath = path2;
-    return path2;
+    // String path2 = '/sdcard/download/$fileName';
+    downloadedPath = path;
+    return path;
   }
 
   @override
@@ -124,10 +123,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     .country
                     .callingCodes
                     .first),
-            onTap: () => Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => CountriesScreen(),
-              ),
+            onTap: () => showDialog(
+              context: context,
+              builder: (context) => Dialog(child: CountriesScreen()),
             ),
           ),
           ListTile(
@@ -308,10 +306,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                             Padding(
                                               padding:
                                                   const EdgeInsets.all(8.0),
-                                              child: Text(Provider.of<
-                                                          SettingsController>(
-                                                      context)
-                                                  .releaseMap['body']),
+                                              child: Markdown(
+                                                  data: Provider.of<
+                                                              SettingsController>(
+                                                          context)
+                                                      .releaseMap['body']),
                                             ),
                                           ],
                                         ),
@@ -334,10 +333,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ),
           Padding(
             padding: EdgeInsets.all(16),
-            child: Text(downloading
-                ? 'Don\'t go to another tab while downloading update or it will start again'
-                : ''),
-          )
+            child: Text(
+              downloading
+                  ? 'Don\'t go to another tab while downloading update or it will start again'
+                  : '',
+              style: TextStyle(
+                color: Colors.grey,
+              ),
+            ),
+          ),
         ],
       ),
     );
