@@ -18,8 +18,8 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:get_version/get_version.dart';
+// import 'package:flutter/services.dart';
+// import 'package:get_version/get_version.dart';
 import 'package:hive/hive.dart';
 import 'package:version/version.dart';
 import 'package:whatsapp_helper/models/country.dart';
@@ -40,7 +40,7 @@ class SettingsController with ChangeNotifier {
   bool _checking = true;
   SettingsController(this.settings) {
     getSettings();
-    getVersion();
+    // getVersion();
   }
   getSettings() {
     if (settings.get('defaultCountry') != null) {
@@ -63,15 +63,15 @@ class SettingsController with ChangeNotifier {
   get checking => _checking;
   get releaseMap => _releaseMap;
 
-  getVersion() async {
-    try {
-      _projectVersion = await GetVersion.projectVersion;
-      _currentVersion = Version.parse(_projectVersion);
-    } on PlatformException {
-      _projectVersion = 'Failed to get build number.';
-    }
-    notifyListeners();
-  }
+  // getVersion() async {
+  //   try {
+  //     _projectVersion = await GetVersion.projectVersion;
+  //     _currentVersion = Version.parse(_projectVersion);
+  //   } on PlatformException {
+  //     _projectVersion = 'Failed to get build number.';
+  //   }
+  //   notifyListeners();
+  // }
 
   parseUpdate() async {
     http.Response response;
